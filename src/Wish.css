@@ -1,0 +1,172 @@
+/* Background Animation */
+@keyframes colorFlash {
+    0% { background-color: #ff4d4d; }
+    25% { background-color: #ff944d; }
+    100% { background-color: #4da6ff; }
+}
+
+/* Make page scrollable */
+.wish-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    animation: colorFlash 4s infinite alternate;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Fireworks Text */
+@keyframes fireworks {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.fireworks-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    animation: fireworks 2s infinite;
+}
+
+/* Glowing Text */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+    100% { text-shadow: 0 0 30px rgba(255, 255, 255, 1); }
+}
+
+.animated-glow {
+    font-size: 1.75rem;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Image Gallery - Responsive */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows images to adjust on small screens */
+    max-width: 100%;
+}
+
+/* Ensure images remain in one row on larger screens */
+.person-image {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    border: 5px solid white;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Shrink images on mobile for better layout */
+@media (max-width: 768px) {
+    .person-image {
+        width: 180px; /* Reduce size on small screens */
+    }
+}
+
+
+.poem-line {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Adjust poem text for mobile */
+@media (max-width: 768px) {
+    .poem-line {
+        font-size: 1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Fireworks Effect */
+@keyframes fireworksEffect {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.fireworks {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 20%, transparent 80%);
+    animation: fireworksEffect 5s infinite;
+    pointer-events: none; /* Fix: Allows clicks to go through */
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+.poem-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 100px; /* Ensures gap between button and bottom */
+}
+
+
+
+
+/* "Wait for it..." Text */
+.wait-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Pulsing effect for "Wait for it..." */
+@keyframes pulse {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+.next-button {
+    background-color: #ff4d4d; /* Bright color */
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; /* Space between last line and button */
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out, background-color 0.3s;
+    display: inline-block; /* Ensure button is properly rendered */
+}
+
+
+.next-button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
