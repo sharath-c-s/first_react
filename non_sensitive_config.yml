@@ -1,0 +1,46 @@
+server:
+  maxThreads: 512
+  applicationContextPath: /
+  applicationConnectors:
+    - type: http
+      port: 9001
+  adminConnectors:
+    - type: http
+      port: 9002
+  requestLog:
+    appenders: []
+
+logging:
+  level: INFO
+  type: logback
+  appenders:
+    - type: console
+      threshold: INFO
+      target: stdout
+      layout:
+        type: json
+        flattenMdc: true
+
+catalogCreationConfig:
+  catalogBulkCreationMaxLimit: 500
+  catalogBulkCreationBatchSize: 500
+
+mappingFlushConfig:
+  threadPoolSize: 4
+  batchSize: 50
+
+enable_headers_interceptor: True
+
+guardRailConfig:
+  maxSourceObjectCount: 25000
+
+hevo_flags_config:
+  flag_provider: HERMES
+  hermes_provider_config:
+    cache_size: 1000
+    cache_duration_seconds: 300
+    endpoint_config:
+      password: integrations@hevo
+      timeout: 300
+      url: https://beetle-chaos-hermes-service.hevo.me
+      username: integrations

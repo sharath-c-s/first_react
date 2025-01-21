@@ -58,9 +58,9 @@ const Wish = () => {
 
             {/* Image Gallery */}
             <div className="image-gallery">
-                <img src="/images/1.jpg" alt="Person 1" className="person-image"/>
-                <img src="/images/2.jpg" alt="Person 2" className="person-image"/>
-                <img src="/images/3.jpg" alt="Person 3" className="person-image"/>
+                <img src="./images/1.jpg" alt="Person 1" className="person-image"/>
+                <img src="./images/2.jpg" alt="Person 2" className="person-image"/>
+                <img src="./images/3.jpg" alt="Person 3" className="person-image"/>
             </div>
 
             {/* Poem Reveal Section */}
